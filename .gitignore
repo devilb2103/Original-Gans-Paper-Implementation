@@ -1,2 +1,4 @@
 /dataset
-/logs
+/Pix2Pix/ConcatenatedImages
+/Pix2Pix/evaluation
+*.pyc
