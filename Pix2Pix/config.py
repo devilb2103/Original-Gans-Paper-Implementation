@@ -14,19 +14,21 @@ CHANNELS_IMG = 1
 L1_LAMBDA = 100
 LAMBDA_GP = 10
 NUM_EPOCHS = 500
-LOAD_MODEL = False
+LOAD_MODEL = True
 SAVE_MODEL = False
 CHECKPOINT_DISC = "Pix2Pix/Models/disc.pth.tar"
 CHECKPOINT_GEN = "Pix2Pix/Models/gen.pth.tar"
 
 both_transform = A.Compose(
-    [A.Resize(width=256, height=256),], additional_targets={"image0": "image"},
+    [A.Resize(width=256, height=256),
+    #  A.HorizontalFlip(p=0.5),
+    ],
+     additional_targets={"image0": "image"},
 )
 
 transform_only_input = A.Compose(
     [
-        A.HorizontalFlip(p=0.5),
-        A.ColorJitter(p=0.2),
+        # A.ColorJitter(p=0.2),
         A.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], max_pixel_value=255.0,),
         ToTensorV2(),
     ]
