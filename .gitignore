@@ -4,3 +4,4 @@
 *.pyc
 /Pix2Pix/Models
 *.rar
+Pix2Pix/Rest Server/Models/gen.pth.tar
